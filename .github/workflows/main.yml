@@ -15,4 +15,4 @@ jobs:
     - name: add known hosts
       run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
     - name: run rsync
-      run: rsync -avr --exclude=.git ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/${{ secrets.SSH_USER }}/team1912.org
+      run: rsync -avr --exclude=.git ./. ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/${{ secrets.SSH_USER }}/team1912.org
