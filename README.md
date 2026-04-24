@@ -86,4 +86,4 @@ The website is compatible with modern browsers:
 
 This project is open source and available under the MIT License. 
 
-## Github Action to deploy from production
+## Fix Github Action to deploy from production
