@@ -10,12 +10,14 @@ const EVENTS_PER_BATCH = 6;
 
 async function fetchCalendarEvents() {
   const url = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(calendarId)}/events?key=${apiKey}&orderBy=startTime&singleEvents=true&timeMin=${new Date().toISOString()}`;
-
   try {
     const response = await fetch(url);
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
     const data = await response.json();
-    allEvents = data.items || [];
+    allEvents = (data.items || []).filter(event => {
+      const summary = event.summary || '';
+      return !/\badded\b$/i.test(summary);
+    });
     displayNextBatch();
   } catch (error) {
     console.error('Failed to fetch calendar events:', error);
