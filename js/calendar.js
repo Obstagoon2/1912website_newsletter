@@ -42,7 +42,9 @@ function cleanDescription(description) {
   if (!description) return '';
   const cutoff = description.indexOf("You can see the RSVP status");
   let cleaned = cutoff !== -1 ? description.substring(0, cutoff) : description;
-  return cleaned.replace(/powered by Google Calendar/i, '').trim();
+  cleaned = cleaned.replace(/powered by Google Calendar/i, '').trim();
+  cleaned = cleaned.replace(/\(.*?added\)/gi, '').trim(); // <-- add this
+  return cleaned;
 }
 
 function createAddToCalendarLink(event) {
