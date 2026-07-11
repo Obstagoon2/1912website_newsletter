@@ -5,9 +5,9 @@
 
 const CONFIG = {
     /** Storefront token from Fourthwall Settings > For Developers */
-    STOREFRONT_TOKEN: 'YOUR_STOREFRONT_TOKEN_HERE',
+    STOREFRONT_TOKEN: 'ptkn_2749c216-001a-4a9c-96aa-f85fe6bfd592',
     /** Fourthwall shop URL used for "View Product" links (no trailing slash) */
-    SHOP_URL: 'https://team1912combustion-shop.fourthwall.com',
+    SHOP_URL: 'https://team1912combustion.github.io/1912website/store',
     /** Base URL for the Storefront API */
     API_BASE_URL: 'https://storefront-api.fourthwall.com/v1',
     /** Collection slug — "all" contains every public product */
